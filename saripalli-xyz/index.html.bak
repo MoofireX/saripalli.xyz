@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoofireX | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <main id="content">
+    <div class="container">
+      <header class="hero">
+        <a href="https://github.com/MoofireX" target="_blank" class="hero-link">
+          <h1 class="glitch" data-text="MOOFIREX">MOOFIREX</h1>
+        </a>
+        <p class="subtitle">Building the future, one repo at a time.</p>
+      </header>
+
+      <div class="projects-grid">
+        <!-- Repo 1 -->
+        <a href="https://github.com/MoofireX/xResize" target="_blank" class="project-card">
+          <div class="card-visual xresize-visual">
+            <div class="window-box"></div>
+          </div>
+          <div class="card-content">
+            <h3>xResize</h3>
+            <p>A simple Python tool for resizing the active window on Linux (X11) with a keyboard shortcut.</p>
+            <span class="badge python">Python</span>
+          </div>
+        </a>
+
+        <!-- Repo 2 -->
+        <a href="https://github.com/MoofireX/Compuco-AI" target="_blank" class="project-card">
+          <div class="card-visual compuco-visual">
+            <div class="terminal-prompt">>_ <span class="typing-cursor"></span></div>
+          </div>
+          <div class="card-content">
+            <h3>Compuco-AI</h3>
+            <p>Bring automation to Windows and Linux through a simple AI interface!</p>
+            <span class="badge python">Python</span>
+          </div>
+        </a>
+
+        <!-- Repo 3 -->
+        <a href="https://github.com/MoofireX/wPGM" target="_blank" class="project-card">
+          <div class="card-visual wpgm-visual">
+            <div class="grid-path">
+              <div class="path-dot"></div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>wPGM</h3>
+            <p>Web-based interactive editor for visualizing PGM map files and their associated waypoint paths.</p>
+            <span class="badge javascript">JavaScript</span>
+          </div>
+        </a>
+
+        <!-- Repo 4 -->
+        <a href="https://github.com/MoofireX/Download_Manager" target="_blank" class="project-card">
+          <div class="card-visual download-visual">
+            <div class="folder"></div>
+            <div class="file-icon"></div>
+          </div>
+          <div class="card-content">
+            <h3>Download_Manager</h3>
+            <p>Python based download manager. Groups files in Downloads folder into sub-directories.</p>
+            <span class="badge python">Python</span>
+          </div>
+        </a>
+
+        <!-- Repo 5 -->
+        <a href="https://github.com/MoofireX/Dodle_Jum" target="_blank" class="project-card">
+          <div class="card-visual dodle-visual">
+            <div class="platform"></div>
+            <div class="jumper"></div>
+          </div>
+          <div class="card-content">
+            <h3>Dodle_Jum</h3>
+            <p>A functional, simple, definitely not a copy game written in Python using Pygame.</p>
+            <span class="badge python">Python</span>
+          </div>
+        </a>
+
+        <!-- Repo 6 -->
+        <a href="https://github.com/MoofireX/hangman.py" target="_blank" class="project-card">
+          <div class="card-visual hangman-visual">
+            <div class="gallows">
+              <div class="rope"></div>
+              <div class="man"></div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>hangman.py</h3>
+            <p>Time, turtle, and random are used to get a nice little hangman game!</p>
+            <span class="badge python">Python</span>
+          </div>
+        </a>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2025 MoofireX</p>
+      </footer>
+    </div>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
