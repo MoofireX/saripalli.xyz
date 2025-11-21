@@ -1,47 +1,29 @@
-name: Deploy Vite Site to GitHub Pages
+name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Deploys on push to main
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-
     steps:
-      # 1. Checkout repo
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      # 2. Setup Node.js (latest supported for Vite)
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: '20'
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build Vite project
       - name: Build
         run: npm run build
 
-      # 5. Debug: check dist exists
-      - name: List dist folder
-        run: ls -la dist
-
-      # 6. Upload build folder as artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-      # 7. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+        with:
+          branch: gh-pages
+          folder: dist
