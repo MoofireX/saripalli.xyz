@@ -3,7 +3,7 @@ name: Deploy Vite Site to GitHub Pages
 on:
   push:
     branches:
-      - main   # Trigger deploy when you push to main
+      - main
 
 jobs:
   build-and-deploy:
@@ -13,11 +13,11 @@ jobs:
       id-token: write
 
     steps:
-      # 1. Checkout repo
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -31,12 +31,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 5. Upload build folder as artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist   # Default Vite output folder
+      # 5. Add CNAME for custom domain (optional)
+      - name: Add custom domain
+        run: echo "www.yourcustomdomain.com" > dist/CNAME
 
-      # 6. Deploy to GitHub Pages
+      # 6. Upload build folder (use latest supported version)
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      # 7. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
